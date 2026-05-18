@@ -1,0 +1,8 @@
+# Ignorar arquivos de configuração local do Docker que não devem subir
+.env
+
+# Se o Docker criar pastas de dados do MySQL na raiz, ignore-as
+/data/
+
+# Opcional: Se você não quiser enviar o código de teste local para a nuvem ainda
+# /site/

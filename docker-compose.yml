@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  # Caixa 1: O Servidor Web + PHP
+  servidor_web:
+    image: php:8.2-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./site:/var/www/html
+
+  # Caixa 2: O Banco de Dados
+  banco_dados:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+    ports:
+      - "3306:3306"
